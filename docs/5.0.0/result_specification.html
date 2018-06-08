@@ -1,0 +1,334 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Specify Result Structure · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Specify Result Structure · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gooddata.github.io/gooddata-ui/index.html"/><meta property="og:description" content="The structure of the result data is defined by `resultSpec`. You can add dimensionality (pivoting), totals, and sorting."/><meta property="og:image" content="https://gooddata.github.io/gooddata-ui/img/metaimage.jpg"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="../js/toggleNav.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg"/></a><a href="/gooddata-ui/versions.html"><h3>5.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/gooddata-ui/docs/5.0.0/about_gooddataui.html" target="_self">Docs</a></li><li class=""><a href="/gooddata-ui/docs/5.0.0/support_options.html" target="_self">Support</a></li><li class=""><a href="https://gooddata-examples.herokuapp.com/" target="_self">Live Examples</a></li><li class=""><a href="https://github.com/gooddata/gooddata-react-components/" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Custom Visualizations</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/platform_intro.html">Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/examples.html">Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/ht_create_your_first_visualization.html">Create Your First Visualization</a></li></ul></div><div class="navGroup navGroupActive"><h3>Visual Components</h3><ul><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/visualization_component.html">Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/afm_components.html">AFM Components</a></li></ul></div><div class="navGroup navGroupActive"><h3>Properties</h3><ul><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/on_legend_ready.html">OnLegendReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/on_fire_drill_event.html">OnFireDrillEvent</a></li></ul></div><div class="navGroup navGroupActive"><h3>Custom Visualizations</h3><ul><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/create_new_visualization.html">Create Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/afm.html">Set Up an AFM Query</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/gooddata-ui/docs/5.0.0/result_specification.html">Specify Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/table_totals_in_execution_object.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/execute_component.html">Execute API Call</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/execution_rest_api_and_result.html">Execution REST API and Result</a></li></ul></div><div class="navGroup navGroupActive"><h3>Development Tips</h3><ul><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/gdc_catalog_export.html">Get Identifiers from the Platform</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/data_layer.html">Access Low Level API</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/ht_use_react_components_with_vanilla_js.html">Use Vanilla JavaScript</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/ht_use_react_component_in_angular_1.x.html">Use Angular 1.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/5.0.0/ht_use_react_component_in_angular_2.x.html">Use Angular 2+</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Specify Result Structure</h1></header><article><div><span><p>The structure of the result data is defined by <code>resultSpec</code>. You can add dimensionality (pivoting), totals, and sorting.</p>
+<p>See <a href="https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16">type definition</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="dimensions"></a><a href="#dimensions" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dimensions</h2>
+<h3><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h3>
+<pre><code class="hljs css js"><span class="hljs-comment">// Type: IResultSpec</span>
+{
+    <span class="hljs-comment">// Optional; Defaults to two dimensions – first with attributes, second with 'measureGroup'</span>
+    dimensions: [
+        {
+            <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;attribute-local-identifier&gt;'</span> ], <span class="hljs-comment">// array of localIdentifiers or 'measureGroup' string</span>
+            totals: []  <span class="hljs-comment">// Optional; Defaults to []</span>
+        }
+    ],
+    <span class="hljs-attr">sorts</span>: []   <span class="hljs-comment">// Optional; Defaults to []</span>
+}
+</code></pre>
+<p>The <code>dimensions</code> field communicates the executor how the data is organized into arrays. Imagine an attribute in columns vs. rows. Each dimension requires the <code>itemIdentifiers</code> property, which is an array of <em>items</em>. These items could be attributes' <code>localIdentifier</code>s from the AFM or a special <code>measureGroup</code> string.</p>
+<blockquote>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Currently, you can define either <em>one</em> or <em>two</em> dimensions, with one dimension being empty. The default value for the first dimension is all attributes. The default value for the second dimension is <code>measureGroup</code>.</li>
+<li><a href="/gooddata-ui/docs/5.0.0/afm_components.html">AFM components</a> fill <code>resultSpec</code> with an appropriate definition depending on the type of the visualization.</li>
+</ul>
+</blockquote>
+<p>Each <em>item</em> consists of several <em>elements</em>. For example, the attribute 'Year' would have 2016, 2017, and so on. The same applies to <code>measureGroup</code>: its <em>elements</em> are the individual measures from the AFM. All these <em>elements</em> are sent in the <code>headerItems</code> property.</p>
+<h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<h4><a class="anchor" aria-hidden="true" id="afm-with-one-measure-revenue-and-one-attribute-year"></a><a href="#afm-with-one-measure-revenue-and-one-attribute-year" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AFM with one measure (<em>Revenue</em>) and one attribute (<em>Year</em>)</h4>
+<p>Data is needed in one dimension: a simple array.</p>
+<pre><code class="hljs css js">resultSpec.dimensions = [
+{ <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span>, <span class="hljs-string">'measureGroup'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult` is returned by years (that is, 2016, 2017, 2018):</span>
+{  
+<span class="hljs-attr">data</span>: [ <span class="hljs-number">32000</span>, <span class="hljs-number">41000</span>, <span class="hljs-number">77000</span> ]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="afm-with-two-measures-revenue-and-clicks-and-one-attribute-year"></a><a href="#afm-with-two-measures-revenue-and-clicks-and-one-attribute-year" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AFM with two measures (<em>Revenue</em> and <em>Clicks</em>) and one attribute (<em>Year</em>)</h4>
+<ul>
+<li><p>A typical layout of a viewBy chart is to have the attribute elements (<em>2016, 2017, ...</em>) in rows and the two measures in columns. The rows mean the first dimension of the returned array, and columns mean the second array.</p>
+<pre><code class="hljs css js">resultSpec.dimensions = [
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span> ] },
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'measureGroup'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult` is returned with measures in the second dimension:</span>
+{
+  <span class="hljs-attr">data</span>: [
+    [ <span class="hljs-number">32000</span>, <span class="hljs-number">300</span> ],
+    [ <span class="hljs-number">41000</span>, <span class="hljs-number">345</span> ],
+    [ <span class="hljs-number">77000</span>, <span class="hljs-number">590</span> ]
+  ]
+}
+</code></pre></li>
+<li><p>What happens when we switch the dimensions?</p>
+<pre><code class="hljs css js">resultSpec.dimensions = [
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'measureGroup'</span> ] },
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult` is returned with measures in the first dimension:</span>
+{
+  <span class="hljs-attr">data</span>: [
+    [ <span class="hljs-number">32000</span>, <span class="hljs-number">41000</span>, <span class="hljs-number">77000</span> ],
+    [ <span class="hljs-number">300</span>, <span class="hljs-number">345</span>, <span class="hljs-number">590</span> ]
+  ]
+}
+</code></pre></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="afm-with-one-measure-revenue-and-two-attributes-year-country"></a><a href="#afm-with-one-measure-revenue-and-two-attributes-year-country" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AFM with one measure (<em>Revenue</em>) and two attributes (<em>Year</em>, <em>Country</em>)</h4>
+<p>This layout is often used for a stackBy chart. It has one attribute in rows and the other in columns.</p>
+<pre><code class="hljs css js">resultSpec.dimensions = [
+{ <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span> ] },
+{ <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Country local id&gt;'</span>, <span class="hljs-string">'measureGroup'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult` is returned with two columns (for example, Czechia and USA):</span>
+{
+<span class="hljs-attr">data</span>: [
+  [ <span class="hljs-number">13000</span>, <span class="hljs-number">19000</span> ],  <span class="hljs-comment">// year 2016 - gives original sum of 32000</span>
+  [ <span class="hljs-number">15000</span>, <span class="hljs-number">26000</span> ],  <span class="hljs-comment">// year 2017 - gives original sum of 41000</span>
+  [ <span class="hljs-number">31000</span>, <span class="hljs-number">36000</span> ]   <span class="hljs-comment">// year 2018 - gives original sum of 77000</span>
+]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="cartesian-product-with-two-measures-revenue-and-clicks-and-one-attribute-year"></a><a href="#cartesian-product-with-two-measures-revenue-and-clicks-and-one-attribute-year" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cartesian product with two measures (<em>Revenue</em> and <em>Clicks</em>) and one attribute (<em>Year</em>)</h4>
+<p>In the previous example, <code>measureGroup</code> contains only one element. If two items in one dimension have more than one element, a Cartesian product is returned.</p>
+<p>The Cartesian product works in the following way: <br>
+<code>A,B × 1,2 = A1, A2, B1, B2</code></p>
+<ul>
+<li>The following code sample gets revenues in years, followed by clicks in years:
+<pre><code class="hljs css js">resultSpec.dimensions = [
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'measureGroup'</span>, <span class="hljs-string">'&lt;Year local id&gt;'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult`:</span>
+{
+  <span class="hljs-attr">data</span>: [ <span class="hljs-number">32000</span>, <span class="hljs-number">41000</span>, <span class="hljs-number">77000</span>, <span class="hljs-number">300</span>, <span class="hljs-number">345</span>, <span class="hljs-number">590</span> ]
+}
+</code></pre></li>
+<li>The following code sample gets revenues in years, followed by clicks in years:
+<pre><code class="hljs css js">resultSpec.dimensions = [
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span>, <span class="hljs-string">'measureGroup'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult`:</span>
+{
+  <span class="hljs-attr">data</span>: [ <span class="hljs-number">32000</span>, <span class="hljs-number">300</span>, <span class="hljs-number">41000</span>, <span class="hljs-number">345</span>, <span class="hljs-number">77000</span>, <span class="hljs-number">590</span> ]
+}
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="headeritems"></a><a href="#headeritems" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>headerItems</h3>
+<p>Every item in dimensions has its own elements. The <em>labels</em> for each element are sent in the <code>executionResult.headerItems</code> property, which is a three-dimensional array.</p>
+<p>Array levels:</p>
+<ol>
+<li><p><strong>dimensions:</strong> one or two records, one for each respective dimension in <code>resultSpec.dimensions</code></p></li>
+<li><p><strong>items:</strong> one record for each item in the dimension's  <code>itemIdentifiers</code></p></li>
+<li><p><strong>elements:</strong> one record for each element in an item (an attribute or <code>measureGroup</code>)</p>
+<p>The type of this record is one of the following: <code>IResultAttributeHeaderItem</code>, <code>IResultMeasureHeaderItem</code>, <code>IResultTotalHeaderItem</code>. See the <a href="https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/Execution.ts#L42-L63">type definition file</a>.</p></li>
+</ol>
+<p>For example:</p>
+<pre><code class="hljs css js">resultSpec.dimensions = [
+  { <span class="hljs-attr">itemIdentifiers</span>: [ <span class="hljs-string">'&lt;Year local id&gt;'</span>, <span class="hljs-string">'measureGroup'</span> ] }
+]
+
+<span class="hljs-comment">// `executionResult`:</span>
+{  
+    <span class="hljs-attr">data</span>: [ <span class="hljs-number">32000</span>, <span class="hljs-number">41000</span>, <span class="hljs-number">77000</span> ]
+    headerItems: [ <span class="hljs-comment">// first dimension (we have not specified any other)</span>
+        [ 
+            <span class="hljs-comment">// first item (Year attribute)</span>
+            [ 
+                <span class="hljs-comment">// elements of the attribute</span>
+                { <span class="hljs-attr">attributeHeaderItem</span>: { <span class="hljs-attr">name</span>: <span class="hljs-string">"2016"</span>, ... } },
+                { <span class="hljs-attr">attributeHeaderItem</span>: { <span class="hljs-attr">name</span>: <span class="hljs-string">"2017"</span>, ... } },
+                { <span class="hljs-attr">attributeHeaderItem</span>: { <span class="hljs-attr">name</span>: <span class="hljs-string">"2018"</span>, ... } }
+            ],
+            <span class="hljs-comment">// second item (measureGroup) </span>
+            [
+                <span class="hljs-comment">// elements of measureGroup = the names of the measures. In this case, it is just one name.</span>
+                { <span class="hljs-attr">measureHeaderItem</span>: { <span class="hljs-attr">name</span>: <span class="hljs-string">"Revenue"</span>, ... } } 
+            ]
+        ]
+    ]
+}
+</code></pre>
+<p>For more examples, sign up to <a href="/gooddata-ui/docs/5.0.0/examples.html">Live Examples</a> and watch the Network tab in your browser's Developer console. You may also experiment by sending your own <code>resultSpec</code>s: for example, use the <a href="https://www.getpostman.com/apps">Postman application</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="totals"></a><a href="#totals" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Totals</h2>
+<p>Optionally, you can define totals for each dimension. Totals are used to get aggregated data over several rows or columns of measure data.</p>
+<h3><a class="anchor" aria-hidden="true" id="definition"></a><a href="#definition" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Definition</h3>
+<pre><code class="hljs css js">totals: [
+   {
+      <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-built_in">String</span>, <span class="hljs-comment">// measure local identifier, on which total is defined</span>
+      type: <span class="hljs-built_in">String</span>,              <span class="hljs-comment">// total type. Possible values are: [sum, max, min, avg, med, nat]</span>
+      attributeIdentifier: <span class="hljs-built_in">String</span> <span class="hljs-comment">// attribute local identifier in dimension defining total placement</span>
+   },
+   ...
+]
+</code></pre>
+<p>See <a href="https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126">type definition</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="order-of-totals"></a><a href="#order-of-totals" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Order of Totals</h3>
+<p>The order of total items is <code>[sum, max, min, avg, med, nat]</code> and cannot be changed.</p>
+<h3><a class="anchor" aria-hidden="true" id="limitations"></a><a href="#limitations" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitations</h3>
+<p>Currently, the following limitations are supported:</p>
+<ul>
+<li>Table visualizations
+<ul>
+<li>First dimension with <code>attributes</code> and <code>totals</code></li>
+<li>Second dimension with <code>measureGroup</code></li>
+</ul></li>
+<li>Grand totals in the first dimension
+<ul>
+<li><code>total.attributeIdentifier</code> contains the first <code>attribute-local-identifier</code> from <code>itemIdentifiers</code>.</li>
+</ul></li>
+</ul>
+<p>If you want to define a <code>nat</code> (native) total, make sure that it is in sync with the <code>AFM.nativeTotals</code> definition (see <a href="/gooddata-ui/docs/5.0.0/afm.html#native-total">Native totals</a>).</p>
+<h3><a class="anchor" aria-hidden="true" id="defining-table-totals"></a><a href="#defining-table-totals" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Defining table totals</h3>
+<p>See <a href="/gooddata-ui/docs/5.0.0/table_totals_in_execution_object.html">Table Totals in ExecutionObject</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<pre><code class="hljs css js">{
+    <span class="hljs-attr">dimensions</span>: [
+        {
+            <span class="hljs-attr">itemIdentifiers</span>: [<span class="hljs-string">'&lt;attribute-local-identifier-1&gt;'</span>, <span class="hljs-string">'&lt;attribute-local-identifier-2&gt;'</span>]
+            totals: [
+                {
+                    <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-string">'&lt;measure-local-identifier-1&gt;'</span>,
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'avg'</span>,
+                    <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'&lt;attribute-local-identifier-1&gt;'</span>
+                },
+                {
+                    <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-string">'&lt;measure-local-identifier-2&gt;'</span>,
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'nat'</span>,
+                    <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'&lt;attribute-local-identifier-1&gt;'</span>
+                }
+                ...
+            ]
+        },
+        {
+            <span class="hljs-attr">itemIdentifiers</span>: [<span class="hljs-string">'measureGroup'</span>]
+        }
+    ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="sorting"></a><a href="#sorting" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sorting</h2>
+<p>Sorting is defined by an array of either <code>AttributeSortItems</code> or <code>MeasureSortItems</code>.</p>
+<p>Multi-level sorting is supported by combining several sortings. For example, sort by date first, then by product name alphabetically.</p>
+<p>You can sort specific dimension items by a data line using <code>measureSortItem</code>.</p>
+<p>A data line is uniquely defined by the <code>locators</code> array. The data line contains a chain of elements (<code>attributeLocatorItem</code>) and optionally a measure (<code>measureLocatorItem</code>) matching the selected dimension items. For example, you can sort your data by a specific data column (sorting your product sales only by sales of a certain product).</p>
+<p>If the selected attributes, attribute values or measures are not available (for example, by being filtered out), <code>measureSortItems</code> are omitted.</p>
+<p>Measures are always listed in the same order in which they were defined in the AFM. Sorting measures based on their value is currently <em>not</em> supported.</p>
+<h3><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h3>
+<pre><code class="hljs css js">{
+    ...
+    <span class="hljs-comment">// Type SortItem[]</span>
+    sorts: [
+        <span class="hljs-comment">// Type: IAttributeSortItem</span>
+        {
+            <span class="hljs-attr">attributeSortItem</span>: {
+                <span class="hljs-attr">direction</span>: <span class="hljs-string">'asc'</span>,   <span class="hljs-comment">// or 'desc',</span>
+                attributeIdentifier: <span class="hljs-string">'&lt;attribute-local-identifier&gt;'</span>,
+                <span class="hljs-attr">aggregation</span>: <span class="hljs-string">'sum'</span> <span class="hljs-comment">// Optional;</span>
+            }
+        },
+        <span class="hljs-comment">// Type: IMeasureSortItem</span>
+        {
+            <span class="hljs-attr">measureSortItem</span>: {
+                <span class="hljs-attr">direction</span>: <span class="hljs-string">'asc'</span>,   <span class="hljs-comment">// or 'desc',</span>
+                <span class="hljs-comment">// Type: LocatorItem[]</span>
+                locators: [
+                    attributeLocatorItem: {
+                        <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'&lt;attribute-local-identifier&gt;'</span>,
+                        <span class="hljs-attr">element</span>: <span class="hljs-string">'&lt;attribute-value-uri&gt;'</span>
+                    };
+                ]
+            }
+        }
+    ]
+    ...
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="aggregation"></a><a href="#aggregation" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aggregation</h3>
+<p>By using <code>aggregation: 'sum'</code>, all elements of an attribute are sorted based on an aggregation function applied to all valid values belonging to each element. This is extremely useful when sorting stacked visualizations such as stack bars or area charts.</p>
+<p>Currently, only sorting by the <code>sum</code> function is supported.</p>
+<p>The following example shows sorting a table with two measures and a 'Year' attribute. You can set sorting based on the Year attribute with:</p>
+<pre><code class="hljs css js">{
+    ...
+    aggregation: <span class="hljs-string">'sum'</span>,
+    <span class="hljs-attr">direction</span>: <span class="hljs-string">'desc'</span>
+    ...
+}
+</code></pre>
+<p>Consider the following original data:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Year</th><th style="text-align:left">2006</th><th style="text-align:left">2006</th><th style="text-align:left">2007</th><th style="text-align:left">2007</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Measures</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td></tr>
+<tr><td style="text-align:left">Values</td><td style="text-align:left">1</td><td style="text-align:left">2</td><td style="text-align:left">3</td><td style="text-align:left">4</td></tr>
+</tbody>
+</table>
+<p>The sorting function (<code>sum</code>) is applied to all attribute element values for each attribute element (2006 and 2007). Notice that you are summing up values across different measures (M1 and M2):</p>
+<table>
+<thead>
+<tr><th style="text-align:left">2006</th><th style="text-align:left">2007</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">1 + 2 = 3</td><td style="text-align:left">3 + 4 = 7</td></tr>
+</tbody>
+</table>
+<p>Attribute values are then sorted by this computed value (3 and 7, respectivelly):</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Year</th><th style="text-align:left">2007</th><th style="text-align:left">2007</th><th style="text-align:left">2006</th><th style="text-align:left">2006</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Measures</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td></tr>
+<tr><td style="text-align:left">Values</td><td style="text-align:left">3</td><td style="text-align:left">4</td><td style="text-align:left">1</td><td style="text-align:left">4</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="quick-reference-of-dimensions"></a><a href="#quick-reference-of-dimensions" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Reference of Dimensions</h2>
+<table>
+<tbody>
+<tr>
+<th class="confluenceTh">AFM</th>
+<th class="confluenceTh"><code>resultSpec.dimensions:</code></th>
+<th class="confluenceTh"><code>executionResult: { }</code></th>
+</tr>
+<tr>
+<td class="confluenceTd"><span>1 measure<br>1 attribute (A)</span></td>
+<td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td>
+<td class="confluenceTd"><pre><code class="hljs">        A1    A2    A3     <span style="color: rgb(84,84,84)">← elements of attr A</span><br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd" colspan="1">2 measures (M1, M2)</td>
+<td colspan="1" class="confluenceTd">[<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</td>
+<td colspan="1" class="confluenceTd"><pre><code class="hljs">        M1    M2     <span style="color: rgb(84,84,84)">← elements of measureGroup</span><br>data: [ ... , ... ]</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd">2 measures (M1, M2)<br>1 attribute (A)</td>
+<td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td>
+<td class="confluenceTd"><pre><code class="hljs">        A1-M1  A1-M2  A2-M1  A2-M2   <span style="color: rgb(84,84,84)">← cartesian product of</span><br>data: [ .... , .... , .... , .... ]    elements from A and <br>                                       measureGroup</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd">empty first dimension<br>+ the same as above</td>
+<td class="confluenceTd"><p>[<br> { itemIdentifiers: [ ] },<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</code></pre></td>
+<td class="confluenceTd"><pre><code class="hljs">data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td>
+</tr>
+<tr>
+<td colspan="1" class="confluenceTd"><span>2 measures (M1, M2)</span> <br> <span>1 attribute (A)<br> <br> </span>// typical for viewBy chart</td>
+<td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</code></pre></td>
+<td colspan="1" class="confluenceTd"><pre><code class="hljs">data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elems of A<br>  [ ... , ... ],  ← A1      and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td>
+</tr>
+<tr>
+<td colspan="1" class="confluenceTd">2 attributes (A, B)<br>1 measure (M1)<br> <br>// typical for stackBy chart</td>
+<td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'B', 'measureGroup' ] }<br>]</code></pre></td>
+<td colspan="1" class="confluenceTd"><pre><code class="hljs">data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td>
+</tr>
+</tbody>
+</table></span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="afm.html">← Set Up an AFM Query</a><a class="docs-next button" href="table_totals_in_execution_object.html">Specify Table Totals →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#dimensions">Dimensions</a><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#examples">Examples</a></li><li><a href="#headeritems">headerItems</a></li></ul></li><li><a href="#totals">Totals</a><ul class="toc-headings"><li><a href="#definition">Definition</a></li><li><a href="#order-of-totals">Order of Totals</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#defining-table-totals">Defining table totals</a></li><li><a href="#example">Example</a></li></ul></li><li><a href="#sorting">Sorting</a><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#aggregation">Aggregation</a></li></ul></li><li><a href="#quick-reference-of-dimensions">Quick Reference of Dimensions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright wrapper">Copyright © 2007–2018 GoodData Corporation. All Rights Reserved. Code licensed under an <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">BSD License</a>.</section></footer></div><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-3766725-19', 'auto');
+              ga('send', 'pageview');
+            </script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
