@@ -5,7 +5,11 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: filter_visual_components
 ---
 
-This article provides examples of filtering visual components by date and attribute values. You can filter the `Visualization` component, `Kpi`, `Headline`, charts and table components with the `filters` prop. The `filters` prop is an array of attribute and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md) or [`AttributeElements`](create_custom_attribute_filter.md) components.
+This article provides examples of filtering visual components by date and attribute values.
+
+You can filter the `Visualization` component, `Kpi`, `Headline`, chart components and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md) or [`AttributeElements`](create_custom_attribute_filter.md) components.
+
+The `filter` prop is identical to the structure of individual filters in AFM. For more information, see [Set Up an AFM Query](afm.md).
 
 Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
@@ -13,32 +17,32 @@ Both global filters and measure filters are always interpreted as an intersectio
 
 ### Positive attribute filter
 
-**Positive attribute filter** lists only those items whose attribute elements' URIs are included in the `in` property array.
+A **positive attribute filter** lists only those items whose attribute elements' URIs are included in the `in` property array.
 
 ```javascript
 // Type: IPositiveAttributeFilter
 {
     positiveAttributeFilter: {
         displayForm: {
-            identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
+            identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
         },
-        in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
+        in: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only URIs
     }
 },
 ```
 
 ### Negative attribute filter
 
-**Negative attribute filter** lists only those items whose attribute elements' URIs are _not_ included in the  `notIn` property array.
+A **negative attribute filter** lists only those items whose attribute elements' URIs are *not* included in the `notIn` property array.
 
 ```javascript
 // Type: IPositiveAttributeFilter
 {
     negativeAttributeFilter: {
         displayForm: {
-            identifier: '<attribute-displayForm-identifier>' // Or uri: '<attribute-displayForm-uri>'
+            identifier: '<attribute-displayForm-identifier>' // Or URI: '<attribute-displayForm-uri>'
         },
-        notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
+        notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only URIs
     }
 },
 ```
@@ -47,7 +51,7 @@ Both global filters and measure filters are always interpreted as an intersectio
 
 ### Absolute date filter
 
-You can set a filter to show data that fall within a defined date range with the *absolute date filter*.
+An **absolute date filter** shows data that falls within a defined time range.
 
 ```javascript
 {
@@ -63,17 +67,9 @@ You can set a filter to show data that fall within a defined date range with the
 
 ### Relative date filter
 
-You can set a filter to show data that fall within a date range defined relatively to the current
-<!-- TODO: check the wording for "relative date uni / granularity" -->
-date. Granularity defines what relative date unit is used (for example, week).
+A **relative date filter** shows data that falls within a time range defined relatively to the current date. Filter granularity (`granularity`) defines how a time range can be broken down to smaller time units (week, month, quarter, and so on).
 
-`from` and `to` properties set the number of granularity units (for example, weeks) before or after the current date that define the filter range.
-
-* `0` for the current day, week, month, quarter, or year \(depending on the chosen granularity\)
-* `-1` for the previous period
-* `-`_`n`_ for the *n*th previous period
-
-Possible values of `granularity` are:
+`granularity` can be set to:
 
 | Value | Description |
 | :--- | :--- |
@@ -84,7 +80,13 @@ Possible values of `granularity` are:
 | `'GDC.time.quarter'` | Quarters of a year |
 | `'GDC.time.year'` | Years |
 
-### Examples
+The `from` and `to` properties set the number of granularity units (for example, weeks) before or after the current date. That is, `from` and `to`  define the filter range.
+
+* `0` for the current day, week, month, quarter, or year \(depending on the chosen granularity\)
+* `-1` for the previous period
+* `-n` for the *n*th previous period
+
+### Relative filter examples
 
 **Last 7 days \(yesterday and 6 days before\):**
 
@@ -93,11 +95,11 @@ Possible values of `granularity` are:
 {
     relativeDateFilter: {
         dataSet: {
-            identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
+            identifier: '<date-dataset-identifier>' // Or URI: '<date-dataset-uri>'
         },
-        granularity: 'GDC.time.date',   // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
-        from: -7,   // positive or negative whole numbers
-        to: -1  // positive or negative whole numbers
+        granularity: 'GDC.time.date',   // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.week_us' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
+        from: -7,   // Positive or negative integers
+        to: -1  // Positive or negative integers
     }
 }
 ```
@@ -109,11 +111,11 @@ Possible values of `granularity` are:
 {
     relativeDateFilter: {
         dataSet: {
-            identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
+            identifier: '<date-dataset-identifier>' // Or URI: '<date-dataset-uri>'
         },
-        granularity: 'GDC.time.month',  // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
-        from: -11,  // positive or negative whole numbers
-        to: 0   // positive or negative whole numbers
+        granularity: 'GDC.time.month',  // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.week_us' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
+        from: -11,  // Positive or negative integers
+        to: 0   // Positive or negative integers
     }
 }
 ```
@@ -125,18 +127,20 @@ Possible values of `granularity` are:
 {
     relativeDateFilter: {
         dataSet: {
-            identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
+            identifier: '<date-dataset-identifier>' // Or URI: '<date-dataset-uri>'
         },
-        granularity: 'GDC.time.quarter',    // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
-        from: -1,   // positive or negative whole numbers
-        to: -1  // positive or negative whole numbers
+        granularity: 'GDC.time.quarter',    // Supported values: 'GDC.time.date' | 'GDC.time.week' | 'GDC.time.week_us' | 'GDC.time.month' | 'GDC.time.quarter' | 'GDC.time.year'
+        from: -1,   // Positive or negative integers
+        to: -1  // Positive or negative integers
     }
 }
 ```
 
 ## Measure filters
 
-You can also set a filter on a specific measure. This is helpful when you have duplicate measures with diferent filters. Pass an array of attribute or date filters as the `filter` prop inside the measure definition to set a measure filter.
+You can set a filter on a specific measure. This is helpful when you have duplicate measures with diferent filters.
+
+To set a measure filter, pass an array of attribute filters or date filters as the `filter` prop inside the measure definition.
 
 ```jsx
 <div style={{ height: 300 }}>
@@ -156,7 +160,7 @@ You can also set a filter on a specific measure. This is helpful when you have d
                                     displayForm: {
                                         identifier: 'label.restaurantlocation.locationstate'
                                     },
-                                    // Attribute elements currently support only uri
+                                    // Attribute elements currently support only URIs
                                     in: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
                                 }
                             }
@@ -170,7 +174,9 @@ You can also set a filter on a specific measure. This is helpful when you have d
 </div>
 ```
 
-## Visualization component filter example
+## Filter examples
+
+### Visualization component filter
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
@@ -186,7 +192,7 @@ import { Visualization } from '@gooddata/react-components';
                     displayForm: {
                         identifier: 'label.restaurantlocation.locationstate'
                     },
-                    // Attribute elements currently support only uri
+                    // Attribute elements currently support only URIs
                     in: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
                 }
             }
@@ -195,13 +201,12 @@ import { Visualization } from '@gooddata/react-components';
 </div>
 ```
 
-If you reference a saved visualization with active filters and set the `filter` prop on the Visualization component, both sets of filters will be merged using these rules:
+If you reference a saved visualization with active filters and set the `filter` prop on the Visualization component, both sets of filters will be merged using the following rules:
 
-* if a saved visualization has an active filter with the same object qualifier (identifier or uri) as the one defined with the `filter` prop,
-the saved filter will be overwritten by the one defined in the prop.
-* all other filters, both saved and from the prop, will be added.
+* If the active filter in the saved visualization and the filter defined with the `filter` prop have the same object qualifier (identifier or URI), the filter defined with the `filter` prop overwrites the active filter in the saved visualization.
+* All other filters, both saved and from the `filter` prop, will be added.
 
-## Chart component filter example
+### Chart component filter
 
 ```jsx
 <div style={{ height: 300 }}>
@@ -225,7 +230,7 @@ the saved filter will be overwritten by the one defined in the prop.
                     displayForm: {
                         identifier: 'label.restaurantlocation.locationstate'
                     },
-                    // Attribute elements currently support only uri
+                    // Attribute elements currently support only URIs
                     notIn: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
                 }
             }
@@ -234,9 +239,9 @@ the saved filter will be overwritten by the one defined in the prop.
 </div>
 ```
 
-## AttributeFilter example
+### AttributeFilter
 
-`AttributeFilter` renders a dropdown list of all values of the selected attribute. `AttributeFilter` has the `onApply` function property. This function is called when the user clicks the Apply button in the filter dropdown. The function receives an attribute filter with the selected (positive filter) or not selected (negative filter) attribute values.
+`AttributeFilter` renders a dropdown list of all values of the selected attribute. `AttributeFilter` has the `onApply` function property. This function is called when the user clicks the Apply button in the filter dropdown. The function receives an attribute filter with either the selected attribute values (positive filter) or not selected attribute values (negative filter).
 
 ```jsx
 import React, { Component } from 'react';
@@ -307,11 +312,11 @@ export class AttributeFilterExample extends Component {
 }
 ```
 
-[See live example](https://gooddata-examples.herokuapp.com/attribute-filter-components)
+Also, see the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
 
-## AttributeElements example
+### AttributeElements
 
-Pass a custom children function to `AttributeElements`. This function will receive a parameter with a list of attribute values of the selected attribute. You can use this to render any custom attribute filter.
+Pass a custom children function to `AttributeElements`. This function will receive a parameter with a list of attribute values for the selected attribute. You can use it to render any custom attribute filter.
 
 ```jsx
 <AttributeElements
@@ -374,4 +379,4 @@ Pass a custom children function to `AttributeElements`. This function will recei
 </AttributeElements>
 ```
 
-[See live example](https://gooddata-examples.herokuapp.com/attribute-filter-components)
+Also, see the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).

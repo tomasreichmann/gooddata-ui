@@ -5,7 +5,6 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
 
-
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
 
@@ -41,8 +40,9 @@ Each attribute requires `localIdentifier` and `displayForm`.
 
 ## Filter
 
-You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
+The structure of individual filters is identical to the `filter` prop that is used to filter visual components. For more information, see [Filter Visual Components](filter_visual_components.md).
 
+You can limit the execution by providing a `filters` prop to your AFM. It is an array of filters. Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
 ```javascript
 const afm = {
@@ -54,8 +54,6 @@ const afm = {
 ```
 
 All attributes, `popAttribute`s and filters are defined using the `displayForm` identifier.
-
-The structure of individual filters is identical to the `filter` prop used to filter visual components. See [Filter visual components](filter_visual_components.md).
 
 ## Measure
 
