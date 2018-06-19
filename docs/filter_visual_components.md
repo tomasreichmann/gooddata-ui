@@ -9,7 +9,7 @@ This article provides examples of filtering visual components by date and attrib
 
 You can filter the `Visualization` component, `Kpi`, `Headline`, chart components and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md) or [`AttributeElements`](create_custom_attribute_filter.md) components.
 
-The `filter` prop is identical to the structure of individual filters in AFM. For more information, see [Set Up an AFM Query](afm.md).
+The `filters` prop is identical to the structure of individual filters in AFM. For more information, see [Set Up an AFM Query](afm.md).
 
 Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
@@ -140,7 +140,7 @@ The `from` and `to` properties set the number of granularity units (for example,
 
 You can set a filter on a specific measure. This is helpful when you have duplicate measures with diferent filters.
 
-To set a measure filter, pass an array of attribute filters or date filters as the `filter` prop inside the measure definition.
+To set a measure filter, pass an array of attribute filters or date filters as the `filters` prop inside the measure definition.
 
 ```jsx
 <div style={{ height: 300 }}>
@@ -201,10 +201,10 @@ import { Visualization } from '@gooddata/react-components';
 </div>
 ```
 
-If you reference a saved visualization with active filters and set the `filter` prop on the Visualization component, both sets of filters will be merged using the following rules:
+If you reference a saved visualization with active filters and set the `filters` prop on the Visualization component, both sets of filters will be merged using the following rules:
 
-* If the active filter in the saved visualization and the filter defined with the `filter` prop have the same object qualifier (identifier or URI), the filter defined with the `filter` prop overwrites the active filter in the saved visualization.
-* All other filters, both saved and from the `filter` prop, will be added.
+* If the active filter in the saved visualization and the filter defined with the `filters` prop have the same object qualifier (identifier or URI), the filter defined with the `filters` prop overwrites the active filter in the saved visualization.
+* All other filters, both saved and from the `filters` prop, will be added.
 
 ### Chart component filter
 
