@@ -54,6 +54,7 @@ A **negative attribute filter** lists only those items whose attribute elements
 An **absolute date filter** shows data that falls within a defined time range.
 
 ```javascript
+// Type: IAbsoluteDateFilter
 {
     absoluteDateFilter: {
         dataSet: {
