@@ -49,7 +49,7 @@ The structure of individual filters is identical to the `filters` prop that is u
 ```javascript
 const afm = {
     ...
-    // Optional; By default []; Type: CompatibilityFilter[]
+    // Optional; By default [];
     filters: [ filter1, filter2, ... ]
     ...
 }
@@ -227,7 +227,7 @@ definition: {
 }
 ```
 
-#### Measure with global filters 
+#### Measure with global filters
 
 ```javascript
 // Type: IAfm
@@ -264,7 +264,7 @@ definition: {
             }
         },
         // Type: IPositiveAttributeFilter
- 
+
         {
             positiveAttributeFilter: {
                 displayForm: {
@@ -274,11 +274,11 @@ definition: {
             }
         }
     ]
- 
+
 }
 ```
 
-#### Period-over-period with measure defined by reference in AFM 
+#### Period-over-period with measure defined by reference in AFM
 
 ```javasctript
 {

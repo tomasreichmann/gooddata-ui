@@ -37,7 +37,7 @@ A **positive attribute filter** lists only those items whose attribute elements'
 A **negative attribute filter** lists only those items whose attribute elements' URIs are *not* included in the `notIn` property array.
 
 ```javascript
-// Type: IPositiveAttributeFilter
+// Type: INegativeAttributeFilter
 {
     negativeAttributeFilter: {
         displayForm: {
