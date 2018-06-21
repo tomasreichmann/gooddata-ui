@@ -3,6 +3,7 @@ title: Filter Visual Components
 sidebar_label: Filter Visual Components
 copyright: (C) 2007-2018 GoodData Corporation
 id: version-5.1.0-filter_visual_components
+original_id: filter_visual_components
 ---
 
 This article provides examples of filtering visual components by date and attribute values.
@@ -145,23 +146,23 @@ To set a measure filter, pass an array of attribute filters or date filters as t
 ```jsx
 <div style={{ height: 300 }}>
     <ColumnChart
-        projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+        projectId="<project-id>"
         measures={[{
             measure: {
                 localIdentifier: 'totalSales',
                 definition: {
                     measureDefinition: {
                         item: {
-                            identifier: 'aa7ulGyKhIE5'
+                            identifier: '<measure-identifier>'
                         },
                         filters: [
                             {
                                 positiveAttributeFilter: {
                                     displayForm: {
-                                        identifier: 'label.restaurantlocation.locationstate'
+                                        identifier: '<attribute-displayform-identifier>'
                                     },
-                                    // Attribute elements currently support only URIs
-                                    in: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
+                                    // Attribute elements currently support only URIs like: /gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116
+                                    in: ['<attribute-value-uri>', ...]
                                 }
                             }
                         ],
@@ -185,15 +186,15 @@ import { Visualization } from '@gooddata/react-components';
 <div style={{ height: 400, width: 600 }}>
     <Visualization
         identifier="aaZWa46oh9cJ"
-        projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+        projectId="<project-id>"
         filters={[
             {
                 positiveAttributeFilter: {
                     displayForm: {
-                        identifier: 'label.restaurantlocation.locationstate'
+                        identifier: '<attribute-displayform-identifier>'
                     },
-                    // Attribute elements currently support only URIs
-                    in: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
+                    // Attribute elements currently support only URIs like: /gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116
+                    in: ['<attribute-value-uri>', ...]
                 }
             }
         ]}
@@ -211,14 +212,14 @@ If you reference a saved visualization with active filters and set the `filters`
 ```jsx
 <div style={{ height: 300 }}>
     <ColumnChart
-        projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+        projectId="<project-id>"
         measures={[{
             measure: {
                 localIdentifier: 'totalSales',
                 definition: {
                     measureDefinition: {
                         item: {
-                            identifier: 'aa7ulGyKhIE5'
+                            identifier: '<measure-identifier>'
                         }
                     }
                 }
@@ -228,10 +229,10 @@ If you reference a saved visualization with active filters and set the `filters`
             {
                 negativeAttributeFilter: {
                     displayForm: {
-                        identifier: 'label.restaurantlocation.locationstate'
+                        identifier: '<attribute-displayform-identifier>'
                     },
-                    // Attribute elements currently support only URIs
-                    notIn: ['/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116']
+                    // Attribute elements currently support only URIs like: /gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2210/elements?id=6340116
+                    notIn: ['<attribute-value-uri>', ...]
                 }
             }
         ]}
@@ -248,9 +249,6 @@ import React, { Component } from 'react';
 import { AttributeFilter, ColumnChart } from '@gooddata/react-components';
 
 import '@gooddata/react-components/styles/css/main.css';
-
-const employeeNameIdentifier = 'label.employee.employeename';
-const totalSalesIdentifier = 'aa7ulGyKhIE5';
 
 export class AttributeFilterExample extends Component {
     constructor(props) {
@@ -271,7 +269,7 @@ export class AttributeFilterExample extends Component {
                 displayForm: {
                     uri: filter.id
                 },
-                [elementsProp]: filter[elementsProp].map(element => (`/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2200/elements?id=${element}`))
+                [elementsProp]: filter[elementsProp].map(element => (`<attribute-displayform-uri>/elements?id=${element}`))
             }
         }];
 
@@ -290,14 +288,14 @@ export class AttributeFilterExample extends Component {
                 />
                 <div style={{ height: 300 }}>
                     <ColumnChart
-                        projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+                        projectId="<project-id>"
                         measures={[{
                             measure: {
                                 localIdentifier: 'totalSales',
                                 definition: {
                                     measureDefinition: {
                                         item: {
-                                            identifier: totalSalesIdentifier
+                                            identifier: '<measure-identifier>'
                                         }
                                     }
                                 }
@@ -320,8 +318,8 @@ Pass a custom children function to `AttributeElements`. This function will recei
 
 ```jsx
 <AttributeElements
-    identifier="label.employee.employeename"
-    projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+    identifier="<attribute-displayform-identifier>"
+    projectId="<project-id>"
     options={{ limit: 20 }}
 >
     {({ validElements, loadMore, isLoading, error }) => {
@@ -337,7 +335,7 @@ Pass a custom children function to `AttributeElements`. This function will recei
             ? [{
                 positiveAttributeFilter: {
                     displayForm: {
-                        identifier: 'label.employee.employeename'
+                        identifier: '<attribute-displayform-identifier>'
                     },
                     in: validElements.items.map(item => (
                        item.element.uri
@@ -358,14 +356,14 @@ Pass a custom children function to `AttributeElements`. This function will recei
                 >More
                 </button>
                 <ColumnChart
-                    projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"
+                    projectId="<project-id>"
                     measures={[{
                         measure: {
                             localIdentifier: 'totalSales',
                             definition: {
                                 measureDefinition: {
                                     item: {
-                                        identifier: 'aa7ulGyKhIE5'
+                                        identifier: '<measure-identifier>'
                                     }
                                 }
                             }
